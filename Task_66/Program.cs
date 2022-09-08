@@ -4,20 +4,15 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-Console.WriteLine("Введите значение числа M: ");
-int numberM = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите значение числа N: ");
-int numberN = Convert.ToInt32(Console.ReadLine());
-int sum = 0;
+Console.Write("Введите значение числа M = ");
+int numM = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите значение числа N = ");
+int numN = Convert.ToInt32(Console.ReadLine());
 
-void NaturalNumber(int sum)
+static int SumNumbers(int numM, int numN)
 {
-    if (numberM < numberN) return;
-    sum = sum + (numberM++);
-    //Console.Write($"Сумма от M до N: {sum} ");
-   
+    if (numM == numN) return numM;                       
+    else if (numM < numN) return numN + SumNumbers(numM, numN - 1); 
+    else return numN + SumNumbers(numM, numN + 1);            
 }
-
-Console.Write($"Сумма от M до N: {sum} ");
-
-NaturalNumber(sum);
+Console.WriteLine($"Сумма натуральных чисел = {SumNumbers(numM, numN)}");

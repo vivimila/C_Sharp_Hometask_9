@@ -9,7 +9,7 @@ int numM = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите значение числа N = ");
 int numN = Convert.ToInt32(Console.ReadLine());
 
-static int SumNumbers(int numM, int numN)
+int SumNumbers(int numM, int numN)
 {
     if (numM == numN) return numM;                       
     else if (numM < numN) return numN + SumNumbers(numM, numN - 1); 
